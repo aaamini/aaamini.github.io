@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% import "_pubs.html" as pubs %}
+{% block content %}
+<h1>Publications</h1>
+<p class="page-lead">Also on <a href="https://orcid.org/{{ site.orcid }}">ORCID</a>.</p>
+{% for year, entries in years %}
+<h2 class="year">{{ year }}</h2>
+{% for e in entries %}
+{{ pubs.pub(e) }}
+{% endfor %}
+{% endfor %}
+{% endblock %}

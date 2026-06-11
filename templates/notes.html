@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Notes</h1>
+<p class="page-lead">Occasional notes on computing, LaTeX, and teaching logistics.</p>
+<div class="news">
+  {% for n in notes %}
+  <span class="news-date">{{ n.date_fmt }}</span>
+  <span><a href="/notes/{{ n.slug }}/">{{ n.title }}</a></span>
+  {% endfor %}
+</div>
+{% endblock %}

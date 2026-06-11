@@ -1,0 +1,29 @@
+# Newest first (order does not matter; items are sorted by date).
+# `text` is markdown.
+
+- date: 2023-12-11
+  text: >-
+    Excited to be a panelist on [Reconsidering Overfitting in the Age of
+    Overparameterized Models](https://neurips.cc/virtual/2023/tutorial/73955)
+    at NeurIPS 2023!
+
+- date: 2022-03-04
+  text: >-
+    The [`bcdc` package](https://github.com/aaamini/bcdc) for Bayesian
+    community detection with covariates is out. Check out
+    [the paper](https://arxiv.org/abs/2203.02090) for more details.
+
+- date: 2021-02-05
+  text: >-
+    Check out the [`hsbm` package](https://github.com/aaamini/hsbm) for
+    hierarchical network clustering.
+
+- date: 2020-12-30
+  text: >-
+    New paper out: [Adjusted chi-square test for degree-corrected block
+    models](https://arxiv.org/abs/2012.15047).
+
+- date: 2020-12-30
+  text: >-
+    Check out the [`nett` package](https://aaamini.github.io/nett/) for
+    community detection!

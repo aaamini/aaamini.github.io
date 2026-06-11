@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page_title %}{{ page_title }} · {% endif %}{{ site.name }}</title>
+<meta name="description" content="{{ site.name }} — {{ site.description }}">
+<link rel="stylesheet" href="/assets/css/style.css">
+{% if math %}
+<script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+{% endif %}
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="site-name" href="/">{{ site.name }}</a>
+    <nav>
+      {% for item in site.nav %}
+      <a href="{{ item.url }}"{% if item.url == active %} class="active"{% endif %}>{{ item.title }}</a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© {{ site.name }}</span>
+    <span>
+      {% for link in site.links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>{% if not loop.last %} · {% endif %}
+      {% endfor %}
+    </span>
+  </div>
+</footer>
+<script src="/assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% import "_pubs.html" as pubs %}
+{% block content %}
+<section class="hero">
+  <div class="hero-text">
+    <h1>{{ site.name }}</h1>
+    <p class="position">{{ site.position | safe }}</p>
+    <div class="bio">{{ bio_top | safe }}</div>
+    <div class="pills">
+      {% for t in site.interests %}
+      <span class="pill pill-static">{{ t }}</span>
+      {% endfor %}
+    </div>
+  </div>
+  <img class="portrait" src="{{ site.photo }}" alt="{{ site.name }}">
+</section>
+
+<section class="bio">{{ bio_bottom | safe }}</section>
+
+<section>
+  <h2 class="kicker">news</h2>
+  <div class="news">
+    {% for n in news %}
+    <span class="news-date">{{ n.date_fmt }}</span>
+    <span>{{ n.html | safe }}</span>
+    {% endfor %}
+  </div>
+</section>
+
+<section>
+  <h2 class="kicker">selected publications</h2>
+  {% for e in selected %}
+  {{ pubs.pub(e) }}
+  {% endfor %}
+  <p><a href="/publications/">all publications →</a></p>
+</section>
+{% endblock %}

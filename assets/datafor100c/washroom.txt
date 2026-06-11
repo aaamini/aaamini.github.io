@@ -1,0 +1,9 @@
+Gender,BkPk,Others,WashYes,WashNo
+Male,no,alone,27,26
+Male,no,others,5,5
+Male,yes,alone,13,8
+Male,yes,others,3,2
+Female,no,alone,4,28
+Female,no,others,0,5
+Female,yes,alone,7,7
+Female,yes,others,4,6

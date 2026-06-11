@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Teaching</h1>
+<h2>Current</h2>
+<ul class="course-list">
+  {% for c in current %}
+  <li>{% if c.link %}<a href="/teaching/{{ c.link }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}</li>
+  {% endfor %}
+</ul>
+<h2>Past</h2>
+<ul class="course-list">
+  {% for c in past %}
+  <li>{% if c.link %}<a href="/teaching/{{ c.link }}">{{ c.title }}</a>{% else %}{{ c.title }}{% endif %}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

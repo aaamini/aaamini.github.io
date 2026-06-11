@@ -1,0 +1,80 @@
+- title: Spring 2026, STATS 100C, Linear Models
+  link: 100c
+  active: true
+
+- title: Winter 2024, STATS 200B, Theoretical Statistics
+  link: 200b
+  active: true
+
+- title: Winter 2024, STATS C161, Introduction to Pattern Recognition and Machine Learning
+  link: c161
+  active: true
+
+- title: Srping 2023, STATS 100C, Linear Models
+  link: 100c-s23
+  active: false
+
+- title: Winter 2023, STATS C161, Introduction to Pattern Recognition and Machine Learning
+  link: c161-w23
+  active: false
+
+- title: Winter 2023, STATS 200B, Theoretical Statistics
+  link: 200b-w23
+  active: false
+
+- title: Spring 2022, STATS 200C, High-dimensional Statistics
+  link: 200c-s22
+  active: false
+
+- title: Spring 2022, STATS 231C,  Theories of Machine Learning
+  link: 231c-s22
+  active: false
+
+
+- title: Winter 2022, STATS 100C, Linear Models
+  link: 100c-w22
+  active: false
+
+- title: Winter 2022, STATS 200B, Theoretical Statistics
+  link: 200b-w22
+  active: false
+
+- title: Spring 2021, STATS 100C, Linear Models
+  link: 100c-s21
+  active: false
+
+- title: Spring 2021, STATS 200C, High-dimensional Statistics
+  link: 200c-s21
+  active: false
+
+- title: Winter 2021, STATS 200B, Theoretical Statistics
+  link: 200b-w21
+  active: false
+
+# - title: Winter 2020, STATS 200B, Theoretical Statistics
+#   link: 200b
+
+- title: Winter 2018, STATS 208, Statistical Learning Theory
+  active: false
+#  link: 208
+
+#- title: Spring 2019, STATS 100C, Linear Models
+#  link: 100c
+
+#- title: Winter 2018, STATS 200B, Theoretical Statistics
+#  link: 200b
+
+#- title: Spring 2017, STATS 100C, Linear Models
+#  link: 100c
+
+#- title: Winter 2017, STAT 200B, Theoretical Statistics
+#  link: s200b_w17.html
+
+#  - title: Winter 2016, STAT 200B, Theoretical Statistics
+
+# - title: Spring 2015, STAT 100C, Linear Models
+
+# - title: Winter 2015, STAT 200B, Theoretical Statistics
+
+# - title: Fall 2012, STATS 426, Introduction to Theoretical Statistics (Univ. of Michigan)
+#  link: s426f12.html

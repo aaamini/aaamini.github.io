@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ page_title }}</h1>
+{% if date %}<p class="page-lead">{{ date }}</p>{% endif %}
+<div class="prose">
+{{ content | safe }}
+</div>
+<p class="backlink"><a href="/notes/">← all notes</a></p>
+{% endblock %}

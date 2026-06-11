@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Students</h1>
+<h2>Current</h2>
+<table>
+  <thead>
+    <tr><th>Name</th><th>Co-advised with</th><th>Department</th></tr>
+  </thead>
+  <tbody>
+    {% for s in current %}
+    <tr>
+      <td>{% if s.link %}<a href="{{ s.link }}">{{ s.name }}</a>{% else %}{{ s.name }}{% endif %}</td>
+      <td>{{ s.coad or "" }}</td>
+      <td>{{ s.dept or "" }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<h2>Alumni</h2>
+<table>
+  <thead>
+    <tr><th>Name</th><th>Co-advised with</th><th>Currently</th><th>At</th></tr>
+  </thead>
+  <tbody>
+    {% for s in alumni %}
+    <tr>
+      <td>{% if s.link %}<a href="{{ s.link }}">{{ s.name }}</a>{% else %}{{ s.name }}{% endif %}</td>
+      <td>{{ s.coad or "" }}</td>
+      <td>{{ s.job_title or "" }}</td>
+      <td>{{ s.loc or "" }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

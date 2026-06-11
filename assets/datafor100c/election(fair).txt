@@ -1,0 +1,22 @@
+Year,Party in Power,Election Outcome,Incumbent Vote Share (%),Growth Rate (%),Inflation Rate (%),Good News Quarters,Duration Value,War,President Running,Party Variable
+1916,D,President Wilson beats Hughes,51.7,2.2,4.3,3,0,0,1,1
+1920,D,Cox loses to Harding,36.1,-11.5,16.5,5,1,1,0,1
+1924,R,Pres. Coolidge beats Davis and LaFollette,58.2,-3.9,5.2,10,0,0,1,0
+1928,R,Hoover beats Smith,58.8,4.6,.2,7,1,0,0,0
+1932,R,Pres. Hoover loses to Roosevelt,40.8,-14.9,7.1,4,1.25,0,1,0
+1936,D,Pres. Roosevelt beats Landon,62.5,11.9,2.4,9,0,0,1,1
+1940,D,Pres. Roosevelt beats Willkie,55,3.7,0,8,1,0,1,1
+1944,D,Pres. Roosevelt beats Dewey,53.8,4.1,5.7,14,1.25,1,1,1
+1948,D,Pres. Truman beats Dewey,52.4,1.8,8.7,5,1.5,1,1,1
+1952,D,Stevenson loses to Eisenhower,44.6,.6,2.3,6,1.75,0,0,1
+1956,R,Pres. Eisenhower beats Stevenson,57.8,-1.5,1.9,5,0,0,1,0
+1960,R,Nixon loses to Kennedy,49.9,.1,1.9,5,1,0,0,0
+1964,D,Pres. Johnson beats Goldwater,61.3,5.1,1.2,10,0,0,1,1
+1968,D,Humphrey loses to Nixon,49.6,4.8,3.2,7,1,0,0,1
+1972,R,Pres. Nixon beats McGovern,61.8,6.3,4.8,4,0,0,1,0
+1976,R,Ford loses to Carter,48.9,3.7,7.7,4,1,0,0,0
+1980,D,Pres. Carter loses to Reagan,44.7,-3.8,8.1,5,0,0,1,1
+1984,R,Pres. Reagan beats Mondale,59.2,5.4,5.4,7,0,0,1,0
+1988,R,G. Bush beats Dukakis,53.9,2.1,3.3,6,1,0,0,0
+1992,R,Pres. G. Bush loses to Clinton,46.5,2.3,3.7,1,1.25,0,1,0
+1996,D,Pres. Clinton beats Dole,54.7,2.9,2.3,3,0,0,1,1

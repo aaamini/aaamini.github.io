@@ -1,0 +1,31 @@
+name: Arash A. Amini
+description: Associate Professor of Statistics at UCLA
+position: Associate Professor of <a href="http://statistics.ucla.edu/">Statistics</a> at <a href="https://www.ucla.edu/">UCLA</a>
+email: aaamini@ucla.edu
+github: aaamini
+orcid: 0000-0002-2808-8310
+photo: /assets/img/aaamini3.jpg
+cv: /assets/pdf/cv_aaa_2024.pdf
+
+nav:
+  - { title: publications, url: /publications/ }
+  - { title: teaching, url: /teaching/ }
+  - { title: students, url: /students/ }
+  - { title: notes, url: /notes/ }
+  - { title: cv, url: /assets/pdf/cv_aaa_2024.pdf }
+
+links:
+  - { title: email, url: "mailto:aaamini@ucla.edu" }
+  - { title: github, url: "https://github.com/aaamini" }
+  - { title: orcid, url: "https://orcid.org/0000-0002-2808-8310" }
+
+interests:
+  - high-dimensional statistics
+  - network models
+  - unsupervised and semisupervised learning
+  - clustering and community detection
+  - causal graphical models
+  - kernel methods
+  - representation learning
+  - optimization
+  - quantitative finance

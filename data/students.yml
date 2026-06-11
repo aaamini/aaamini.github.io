@@ -1,0 +1,90 @@
+- name: Zhi Zhang
+  dept: Stat
+  alum: false
+
+- name: Luciano Vinas
+  dept: Stat
+  alum: false
+
+- name: Navin Souda 
+  dept: Stat
+  alum: false
+
+- name: Chung Kyong Nguen
+  dept: Stat
+  alum: false
+
+- name: Shuang Wu
+  dept: Stat
+  alum: false
+  coad: Prof. Guang Cheng
+
+- name: Hassan Sadeghi
+  dept: Banking & Finance @ UZH
+  alum: false
+  coad: Prof. Farkas
+
+- name: Gautam Dudeja
+  dept: CS (MS)
+  alum: true
+  loc: BNP Paribas
+  link: https://www.linkedin.com/in/gautam-d-63702a98/
+
+- name: Linfan Zhang
+  dept: Stat
+  alum: true
+  link: https://www.linkedin.com/in/linfan-zhang
+  job_title: Applied Scientist  
+  loc: Microsoft
+
+- name: Qiaoling Ye
+  coad: Prof. Qing Zhou
+  dept: Stat
+  alum: true
+  link: https://www.linkedin.com/in/qlye/
+  job_title: Data Scientist 
+  loc: Supplyframe
+  
+- name: Parthe Pandit
+  coad: Prof. Allie Fletcher
+  alum: true
+  link: https://parthe.github.io/
+  job_title: Assistant Professor  # Postdoc 
+  loc: IIT Bombay # UCSD # "Halicioglu Data Science Institute, UCSD"
+
+- name: Mojtaba Sahraee
+  coad: Prof. Allie Fletcher
+  dept: EE
+  link: https://www.linkedin.com/in/mojtabasah/
+  job_title: Software Engineer 
+  alum: true
+  loc: Google
+
+- name: Jiaming Guo
+  link: https://www.linkedin.com/in/jiaming-guo-213871190/
+  alum: true
+  job_title: Data Scientist
+  loc: Walmart Global Tech
+
+
+- name: Zhixin Zhou 
+  link: https://www.cb.cityu.edu.hk/staff/zhixzhou/
+  alum: true
+  job_title: Assistant Professor
+  loc: City University of Hong Kong
+
+- name: Seyed Jalil Kazemitabar
+  job_title: Senior Data Scientist 
+  link: https://www.linkedin.com/in/kazemitabar/
+  alum: true
+  loc: Apple
+
+- name: Bryon Aragam
+  link: https://www.bryonaragam.com/
+  coad: Prof. Qing Zhou
+  alum: true
+  job_title: Assistant Professor
+  loc: University of Chicago
+
+
+

@@ -1,0 +1,60 @@
+---
+layout: page
+title: # 100C
+# permalink: /teaching/100c/syllabus
+---
+
+## Detailed Syllabus
+- Lecture 1:
+  - Review of linear algebra: 
+    - linear independence, span and basis
+- Lecture 2:
+  - Review of linear algebra: 
+    - Column space and kernel of matrix
+    - Inner product and norm
+    - Orthogonal complement and projection
+    - Spectral decomposition 
+- Lecture 3:
+  - Review of linear algebra:
+    - Spectral decomposition (cont'd)
+    - Positive-semidefinite matrices
+  - Random vectors and matrices:
+    - Expectation
+    - Covariance Matrix
+- Lecture 4:
+  - Random vectors and matrices:
+    - Properties of covariance matrices
+    - Covariance matrices under affine transformations
+    - Calculation of covariance matrices
+    - Bilinearity of the covariance operator
+    - Singularity of covariance matrices
+- Lecture 5:
+  - Multivariate normal distribution:
+    - The need for joint distribution
+    - Definition and joint density
+    - *Optional*: Singular Gaussian disributions
+    - Affine transformation property with examples
+    - Marginal distributions (brief)
+    - Conditional distributions (brief)
+    - Equivalence of independence and uncorrelatedness in Gaussian family
+- Lecture 6:
+  - Multivariate normal distribution:
+    - Recap
+    - *Optional*: Whitening
+  - Linear Regression:
+    - Introduction to linear models
+    - Assumptions in linear models
+    - Vector-matrix representation of the linear model
+    - Maximum-likelihood estimation of the parameters:
+      - What is the likelihood?
+      - Reducing likelihood maximization by transformations
+      - Reduction of the MLE for beta to least-squares problem
+- Lecture 7:
+  - Linear Regression:
+    - Maximum-likelihood estimation of the parameters:
+      - Differential approach (brief)
+      - Geometric intereptation of the least-squares problem
+      - Maximum-likelihood estimation of the noise variance
+      - Unbiased estimation of the noise variance
+      - *Optional*: Detailed calculation of `E|e|^2`
+- Lecture 8:
