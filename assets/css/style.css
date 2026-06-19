@@ -137,7 +137,7 @@ th {
 .site-header nav a:hover { color: var(--text); text-decoration: none; }
 .site-header nav a.active { color: var(--text); font-weight: 500; }
 
-main { padding-top: 3rem; padding-bottom: 3.5rem; }
+main.wrap { padding-top: 3.5rem; padding-bottom: 3.5rem; }
 
 .site-footer { border-top: 1px solid var(--hairline); }
 
@@ -189,12 +189,13 @@ main { padding-top: 3rem; padding-bottom: 3.5rem; }
 }
 
 .portrait {
-  width: 108px;
-  height: 108px;
+  width: 124px;
+  height: 124px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 10px;
   flex-shrink: 0;
-  margin-top: 0.4rem;
+  margin-top: 0.35rem;
+  border: 1px solid var(--hairline);
 }
 
 /* sections */
