@@ -56,12 +56,17 @@ alumni table; `coad`, `job_title`, `loc`, `link` are optional).
 
 ## Local preview
 
+Uses [uv](https://docs.astral.sh/uv/) for dependencies (no manual venv step —
+`uv run` creates `.venv`, installs from `uv.lock`, and provisions a matching
+Python on first use):
+
 ```sh
-python3 -m venv .venv && .venv/bin/pip install -r requirements.txt   # once
-.venv/bin/python build.py --serve                                    # http://127.0.0.1:8000
+uv run build.py --serve     # http://127.0.0.1:8000
 ```
 
-`--serve` rebuilds automatically when any source file changes.
+`--serve` rebuilds automatically when any source file changes. A plain
+`uv run build.py` builds once into `_site/`. To change dependencies, edit
+`pyproject.toml` then run `uv lock` (commit the updated `uv.lock`).
 
 ## First deployment
 

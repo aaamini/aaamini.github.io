@@ -1,24 +1,37 @@
-{% macro pub(e) %}
+{% macro row(e) %}
 <article class="pub" id="{{ e.key }}">
-  <span class="badge{% if e.preprint %} badge-preprint{% endif %}">{{ e.abbr }}</span>
-  <div class="pub-body">
-    <p class="pub-title">{{ e.title }}</p>
-    <p class="pub-meta">
+  <p class="pub-title">{{ e.title }}</p>
+  <p class="pub-meta">
+    <span class="pub-byline">
       {%- for a in e.authors %}{% if a.me %}<span class="me">{{ a.name }}</span>{% else %}{{ a.name }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}
-      {%- if e.venue %} · <em>{{ e.venue }}</em>{% endif %} · {{ e.year }}</p>
-    <p class="pub-links">
+      {%- set vn = e.abbr or e.venue %}
+      {%- if vn %} · <span class="pub-venue{% if e.preprint %} is-preprint{% endif %}">{{ vn }}</span>{% endif %}</span>
+    <span class="pub-actions">
       {% for label, url in e.links %}
-      <a class="pill" href="{{ url }}">{{ label }}</a>
+      <a href="{{ url }}">{{ label }}</a>
       {% endfor %}
       {% if e.abstract %}
-      <button class="pill" data-toggle="abs-{{ e.key }}">abstract</button>
+      <button data-toggle="abs-{{ e.key }}">abs</button>
       {% endif %}
-      <button class="pill" data-toggle="bib-{{ e.key }}">bib</button>
-    </p>
-    {% if e.abstract %}
-    <div class="pub-fold" id="abs-{{ e.key }}" hidden>{{ e.abstract }}</div>
-    {% endif %}
-    <pre class="pub-fold" id="bib-{{ e.key }}" hidden><code>{{ e.bibtex }}</code></pre>
-  </div>
+      <button data-toggle="bib-{{ e.key }}">bib</button>
+    </span>
+  </p>
+  {% if e.abstract %}
+  <div class="pub-fold" id="abs-{{ e.key }}" hidden>{{ e.abstract }}</div>
+  {% endif %}
+  <pre class="pub-fold" id="bib-{{ e.key }}" hidden><code>{{ e.bibtex }}</code></pre>
 </article>
+{% endmacro %}
+
+{% macro year_list(groups) %}
+{% for year, entries in groups %}
+<div class="pub-group">
+  <span class="pub-year">{{ year }}</span>
+  <div class="pub-rows">
+    {% for e in entries %}
+    {{ row(e) }}
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
 {% endmacro %}

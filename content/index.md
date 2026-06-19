@@ -1,14 +1,9 @@
 ---
 title: home
 ---
-I work on problems in statistics, machine learning, and optimization.
+Associate professor of [Statistics](http://statistics.ucla.edu/) at [UCLA](https://www.ucla.edu/). I work on the statistical foundations of machine learning — high-dimensional statistics, network models and community detection, unsupervised and semi-supervised learning, causal graphical models, kernel methods, representation learning, optimization, and quantitative finance.
 
-<!--interests-->
+I did my PhD at UC Berkeley with [Martin Wainwright](http://www.cs.berkeley.edu/~wainwrig/) and a postdoc at the University of Michigan with [Liza Levina](http://dept.stat.lsa.umich.edu/~elevina) and [Long Nguyen](http://dept.stat.lsa.umich.edu/~xuanlong/). More in my [CV](/assets/pdf/cv_aaa_2024.pdf).
 
-I did my PhD at UC Berkeley with [Martin Wainwright](http://www.cs.berkeley.edu/~wainwrig/) and a post-doc at the University of Michigan with [Liza Levina](http://dept.stat.lsa.umich.edu/~elevina) and [Long Nguyen](http://dept.stat.lsa.umich.edu/~xuanlong/). You can learn more about me from my [CV](/assets/pdf/cv_aaa_2024.pdf).
-
-Do you want to ask about research opportunities? Please refer to [this FAQ](/research-faq) first. Considering sending an email to request a PTE for class enrollment? Please make sure to [review this information](/pte-policy) first.
-
-My office is at 8105F [Math Sciences Building](https://goo.gl/maps/317h2CWuL8N2).
-Office hours: no office hours (Summer–Fall 2024).
-Email: [aaamini@ucla.edu](mailto:aaamini@ucla.edu)
+<!--students-->
+Looking for research opportunities? Start with the [research FAQ](/research-faq). Emailing about a PTE for class enrollment? Read the [PTE policy](/pte-policy) first. Office hours: none currently (Summer–Fall 2024); my office is 8105F [Math Sciences Building](https://goo.gl/maps/317h2CWuL8N2).

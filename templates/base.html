@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if page_title %}{{ page_title }} · {% endif %}{{ site.name }}</title>
 <meta name="description" content="{{ site.name }} — {{ site.description }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
 {% if math %}
 <script>MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };</script>
@@ -14,7 +17,7 @@
 <body>
 <header class="site-header">
   <div class="wrap header-inner">
-    <a class="site-name" href="/">{{ site.name }}</a>
+    <a class="monogram" href="/" aria-label="Home">{{ site.monogram }}</a>
     <nav>
       {% for item in site.nav %}
       <a href="{{ item.url }}"{% if item.url == active %} class="active"{% endif %}>{{ item.title }}</a>

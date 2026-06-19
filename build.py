@@ -139,7 +139,7 @@ def delatex(s: str) -> str:
 
 def parse_authors(field: str) -> list[str]:
     field = re.sub(r"\s+", " ", field)
-    field = re.sub(r"(\s+and\s+)+", " and ", field)  # tolerate "and and" typos
+    field = re.sub(r"(\s+and)+\s+", " and ", field)  # tolerate "and and" typos
     names = []
     for raw in field.split(" and "):
         raw = raw.strip().strip(",")
@@ -245,6 +245,13 @@ def load_bib() -> list[dict]:
     return pubs
 
 
+def group_by_year(pubs: list[dict]) -> list[tuple[int, list[dict]]]:
+    groups: dict[int, list] = {}
+    for p in pubs:
+        groups.setdefault(p["year"], []).append(p)
+    return sorted(groups.items(), reverse=True)
+
+
 # --------------------------------------------------------------------------
 # Page rendering
 # --------------------------------------------------------------------------
@@ -341,24 +348,28 @@ def build() -> None:
 
     # home
     meta, body = front_matter(ROOT / "content" / "index.md")
-    bio_top, _, bio_bottom = body.partition("<!--interests-->")
+    bio_md, _, students_md = body.partition("<!--students-->")
     news_items = [{"date_fmt": n["date"].strftime("%b %Y"),
                    "html": md_inline(n["text"])}
                   for n in sorted(news, key=lambda n: n["date"], reverse=True)]
     write("/", render("index.html", page_title="",
-                      bio_top=md_convert(bio_top),
-                      bio_bottom=md_convert(bio_bottom),
+                      bio=md_convert(bio_md),
+                      students_note=md_convert(students_md),
                       news=news_items,
-                      selected=[p for p in pubs if p["selected"]],
+                      selected_groups=group_by_year(
+                          [p for p in pubs if p["selected"]]),
+                      pub_count=len(pubs),
+                      year_min=min(p["year"] for p in pubs),
+                      year_max=max(p["year"] for p in pubs),
                       math=pubs_math or has_math(body), active="/"))
 
     # publications
-    years: dict[int, list] = {}
-    for p in pubs:
-        years.setdefault(p["year"], []).append(p)
     write("/publications/", render("publications.html",
                                    page_title="Publications",
-                                   years=sorted(years.items(), reverse=True),
+                                   years=group_by_year(pubs),
+                                   pub_count=len(pubs),
+                                   year_min=min(p["year"] for p in pubs),
+                                   year_max=max(p["year"] for p in pubs),
                                    math=pubs_math, active="/publications/"))
 
     # teaching

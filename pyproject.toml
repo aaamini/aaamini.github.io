@@ -1,0 +1,15 @@
+[project]
+name = "aaamini-site"
+version = "0"
+description = "Static site generator for aaamini.github.io"
+requires-python = ">=3.10"
+dependencies = [
+    "jinja2>=3.1,<4",
+    "markdown-it-py>=3,<4",
+    "mdit-py-plugins>=0.4,<0.6",
+    "bibtexparser>=1.4,<2",
+    "pyyaml>=6,<7",
+]
+
+[tool.uv]
+package = false

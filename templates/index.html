@@ -4,21 +4,29 @@
 <section class="hero">
   <div class="hero-text">
     <h1>{{ site.name }}</h1>
-    <p class="position">{{ site.position | safe }}</p>
-    <div class="bio">{{ bio_top | safe }}</div>
-    <div class="pills">
-      {% for t in site.interests %}
-      <span class="pill pill-static">{{ t }}</span>
+    <div class="bio">{{ bio | safe }}</div>
+    <p class="meta-row">
+      <span>{{ site.office }}</span>
+      {% for link in site.links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
       {% endfor %}
-    </div>
+    </p>
   </div>
   <img class="portrait" src="{{ site.photo }}" alt="{{ site.name }}">
 </section>
 
-<section class="bio">{{ bio_bottom | safe }}</section>
+<section>
+  <div class="section-head">
+    <span class="section-label">Selected publications</span>
+    <a class="section-aside" href="/publications/">all {{ pub_count }} papers, {{ year_min }}–{{ year_max }} →</a>
+  </div>
+  {{ pubs.year_list(selected_groups) }}
+</section>
 
 <section>
-  <h2 class="kicker">news</h2>
+  <div class="section-head">
+    <span class="section-label">News</span>
+  </div>
   <div class="news">
     {% for n in news %}
     <span class="news-date">{{ n.date_fmt }}</span>
@@ -27,11 +35,7 @@
   </div>
 </section>
 
-<section>
-  <h2 class="kicker">selected publications</h2>
-  {% for e in selected %}
-  {{ pubs.pub(e) }}
-  {% endfor %}
-  <p><a href="/publications/">all publications →</a></p>
+<section class="students-note">
+  {{ students_note | safe }}
 </section>
 {% endblock %}
