@@ -3,16 +3,16 @@
   active: true
 
 - title: Spring 2026, STATS 100C, Linear Models
-  link: 100c
-  active: true
+  link: 100c-s26
+  active: false
 
 - title: Winter 2024, STATS 200B, Theoretical Statistics
-  link: 200b
-  active: true
+  link: 200b-w24
+  active: false
 
 - title: Winter 2024, STATS C161, Introduction to Pattern Recognition and Machine Learning
-  link: c161
-  active: true
+  link: c161-w24
+  active: false
 
 - title: Srping 2023, STATS 100C, Linear Models
   link: 100c-s23

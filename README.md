@@ -48,6 +48,12 @@ true`, demote the old one to `false`) and drop a course directory into
 `teaching/` containing a markdown file with `permalink: /teaching/<short>` in
 its front matter. Sibling files (PDFs, HTML) are published next to it.
 
+**Archiving a course.** Keep source directories in `teaching/`; do not move
+them into `teaching/archive/` just for status. Archive status is controlled by
+`active: false` in `data/classes.yml`. Free reusable short slugs by changing
+the old course entry and page permalink to a term-specific URL such as
+`100c-s26`, while the next active offering can use `/teaching/100c`.
+
 **Write a note.** Create `content/notes/<slug>.md` with `title:` and `date:`
 front matter. Math works with `$...$` and `$$...$$`.
 
@@ -84,13 +90,18 @@ uv run build.py --serve     # http://127.0.0.1:8000
 ## Redirect from the UCLA address
 
 URL paths are unchanged from the old site, so a path-preserving redirect
-migrates every deep link. In `public_html/` on the department server, put an
-`.htaccess` with:
+migrates every deep link. On the UCLA `ucla_myfiles` account the live web root
+is `~/Sites/` (not `public_html/`). Put an `.htaccess` there with:
 
 ```apache
+Options -MultiViews
 RewriteEngine On
-RewriteRule ^(.*)$ https://aaamini.github.io/$1 [R=301,L]
+RewriteRule ^(.*)$ https://aaamini.github.io/$1 [R=302,L]
 ```
+
+`Options -MultiViews` keeps Apache from converting extensionless old URLs such
+as `/teaching/100c` to `/teaching/100c.html` before redirecting. Use `302`
+while testing; switch to `301` once the migration is final.
 
 If `.htaccess` is not allowed, fall back to a meta-refresh stub `index.html`
 pointing at https://aaamini.github.io.
