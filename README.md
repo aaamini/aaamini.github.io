@@ -51,6 +51,11 @@ its front matter. Sibling files (PDFs, HTML) are published next to it.
 **Write a note.** Create `content/notes/<slug>.md` with `title:` and `date:`
 front matter. Math works with `$...$` and `$$...$$`.
 
+**Math rendering.** MathJax is intentionally not loaded site-wide. The build
+only includes it on pages with visible rendered math; publication abstracts with
+TeX load MathJax lazily when their `abs` fold is opened. This keeps the
+homepage and publication index from paying the `tex-chtml.js` cost up front.
+
 **Students.** Edit `data/students.yml` (`alum: true` moves someone to the
 alumni table; `coad`, `job_title`, `loc`, `link` are optional).
 

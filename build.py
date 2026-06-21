@@ -94,8 +94,23 @@ def write(url_path: str, text: str) -> None:
     dest.write_text(text)
 
 
+MATH_DELIM_RE = re.compile(r"(?<!\\)(\$\$?)[\s\S]+?(?<!\\)\1|\\\(|\\\[")
+
+
 def has_math(text: str) -> bool:
-    return "$" in text or "\\(" in text
+    return bool(text and MATH_DELIM_RE.search(text))
+
+
+def html_has_math(html: str) -> bool:
+    return 'class="math"' in html
+
+
+def pub_title_has_math(pub: dict) -> bool:
+    return has_math(pub["title"])
+
+
+def rendered_pub_has_math(pub: dict) -> bool:
+    return pub_title_has_math(pub)
 
 
 # --------------------------------------------------------------------------
@@ -264,8 +279,9 @@ def render(template: str, **ctx) -> str:
 def render_markdown_page(meta: dict, body: str, active: str | None = None,
                          template: str = "page.html", **extra) -> str:
     body = body.replace("{{ site.baseurl }}", "")
+    content = md_convert(body)
     return render(template, page_title=meta.get("title", ""),
-                  content=md_convert(body), math=has_math(body),
+                  content=content, math=html_has_math(content),
                   active=active, **extra)
 
 
@@ -344,7 +360,7 @@ def build() -> None:
     shutil.copytree(ROOT / "assets", OUT / "assets")
 
     pubs = load_bib()
-    pubs_math = any(has_math(p["title"] + p["abstract"]) for p in pubs)
+    pubs_math = any(rendered_pub_has_math(p) for p in pubs)
 
     # home
     meta, body = front_matter(ROOT / "content" / "index.md")
@@ -352,16 +368,24 @@ def build() -> None:
     news_items = [{"date_fmt": n["date"].strftime("%b %Y"),
                    "html": md_inline(n["text"])}
                   for n in sorted(news, key=lambda n: n["date"], reverse=True)]
+    selected_pubs = [p for p in pubs if p["selected"]]
+    bio_html = md_convert(bio_md)
+    students_html = md_convert(students_md)
+    home_math = (
+        html_has_math(bio_html) or html_has_math(students_html)
+        or any(html_has_math(n["html"]) for n in news_items)
+        or any(rendered_pub_has_math(p) for p in selected_pubs)
+    )
     write("/", render("index.html", page_title="",
-                      bio=md_convert(bio_md),
-                      students_note=md_convert(students_md),
+                      bio=bio_html,
+                      students_note=students_html,
                       news=news_items,
                       selected_groups=group_by_year(
-                          [p for p in pubs if p["selected"]]),
+                          selected_pubs),
                       pub_count=len(pubs),
                       year_min=min(p["year"] for p in pubs),
                       year_max=max(p["year"] for p in pubs),
-                      math=pubs_math or has_math(body), active="/"))
+                      math=home_math, active="/"))
 
     # publications
     write("/publications/", render("publications.html",
