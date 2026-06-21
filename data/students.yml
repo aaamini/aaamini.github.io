@@ -4,7 +4,9 @@
 
 - name: Luciano Vinas
   dept: Stat
-  alum: false
+  alum: true
+  link: https://www.linkedin.com/in/luciano-vinas-587952138
+  loc: The Voleon Group
 
 - name: Navin Souda 
   dept: Stat
@@ -16,13 +18,12 @@
 
 - name: Shuang Wu
   dept: Stat
-  alum: false
-  coad: Prof. Guang Cheng
+  alum: true
+  loc: Amazon
 
 - name: Hassan Sadeghi
   dept: Banking & Finance @ UZH
-  alum: false
-  coad: Prof. Farkas
+  alum: true
 
 - name: Gautam Dudeja
   dept: CS (MS)
@@ -85,6 +86,3 @@
   alum: true
   job_title: Assistant Professor
   loc: University of Chicago
-
-
-
