@@ -1,6 +1,11 @@
 # Newest first (order does not matter; items are sorted by date).
 # `text` is markdown.
 
+- date: 2026-05-01
+  text: >-
+    At ICLR 2026, presenting
+    [Laplacian Kernelized Bandit](https://arxiv.org/abs/2601.00461).
+
 - date: 2023-12-11
   text: >-
     Excited to be a panelist on [Reconsidering Overfitting in the Age of
