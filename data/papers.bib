@@ -59,16 +59,22 @@
 
 
 
-@article{vinas2023simplifying,
-  abbr = {Preprint},
-  title = {Simplifying GNN Performance with Low Rank Kernel Models},
-  author = {Luciano Vinas and Arash A. Amini},
-  year = {2023},
-  eprint = {2310.05250},
-  archivePrefix = {arXiv},
-  primaryClass = {cs.LG},
-  doi = {10.48550/arXiv.2310.05250},
-  url = {https://arxiv.org/abs/2310.05250},
+@InProceedings{vinas2025simple,
+  abbr = {LoG},
+  title = {Simple GNNs With Low Rank Non-Parametric Aggregators},
+  author = {Vinas, Luciano and Amini, Arash A.},
+  booktitle = {Proceedings of the Third Learning on Graphs Conference},
+  pages = {10:1--10:11},
+  year = {2025},
+  editor = {Wolf, Guy and Krishnaswamy, Smita},
+  volume = {269},
+  series = {Proceedings of Machine Learning Research},
+  month = {26--29 Nov},
+  publisher = {PMLR},
+  pdf = {https://raw.githubusercontent.com/mlresearch/v269/main/assets/vinas25a/vinas25a.pdf},
+  url = {https://proceedings.mlr.press/v269/vinas25a.html},
+  html = {https://proceedings.mlr.press/v269/vinas25a.html},
+  abstract = {We revisit recent spectral GNN approaches to semi-supervised node classification (SSNC). We posit that state-of-the-art (SOTA) GNN architectures may be over-engineered for common SSNC benchmark datasets (citation networks, page-page networks, etc.). By replacing feature aggregation with a non-parametric learner we are able to streamline the GNN design process and avoid many of the engineering complexities associated with SOTA hyperparameter selection (GNN depth, non-linearity choice, feature dropout probability, etc.). Our empirical experiments suggest conventional methods such as non-parametric regression are well suited for semi-supervised learning on sparse, directed networks and a variety of other graph types commonly found in SSNC benchmarks. Additionally, we bring attention to recent changes in evaluation conventions for SSNC benchmarking and how this may have partially contributed to rising performances over time.},
   arxiv = {2310.05250}
 }
 
