@@ -1,5 +1,46 @@
 
 
+@article{faust2026community,
+  abbr = {Preprint},
+  title = {Community-Size Biases in Statistical Inference of Communities in Temporal Networks},
+  author = {Theodore Y. Faust and Arash A. Amini and Mason A. Porter},
+  journal = {arXiv preprint arXiv:2601.15635},
+  year = {2026},
+  eprint = {2601.15635},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.SI},
+  doi = {10.48550/arXiv.2601.15635},
+  url = {https://arxiv.org/abs/2601.15635},
+  arxiv = {2601.15635},
+  code = {https://github.com/tfaust0196/TemporalCommunityComparison},
+  abstract = {In the study of time-dependent networks, researchers often examine the evolution of communities, which are sets of densely connected sets of nodes that are connected sparsely to other nodes. An increasingly prominent approach to studying community structure in temporal networks is statistical inference. In the present paper, we study the performance of a class of statistical-inference methods for community detection in temporal networks. We represent temporal networks as multilayer networks, with each layer encoding a time step, and we illustrate that statistical-inference models that generate community assignments via either a uniform distribution on community assignments or discrete-time Markov processes are biased against generating communities with large or small numbers of nodes. In particular, we demonstrate that statistical-inference methods that use such generative models tend to poorly identify community structure in networks with large or small communities. To rectify this issue, we introduce a novel statistical model that generates the community assignments of the nodes in given layer using all of the community assignments in the previous layer. We prove results that guarantee that our approach greatly mitigates the bias against large and small communities, so using our generative model is beneficial for studying community structure in networks with large or small communities.}
+}
+
+@article{amini2026wasserstein,
+  abbr = {Preprint},
+  title = {Wasserstein Concentration of Empirical Measures for Dependent Data via the Method of Moments},
+  author = {Arash A. Amini and Luciano Vinas},
+  journal = {arXiv preprint arXiv:2601.07228},
+  year = {2026},
+  eprint = {2601.07228},
+  archivePrefix = {arXiv},
+  primaryClass = {math.ST},
+  doi = {10.48550/arXiv.2601.07228},
+  url = {https://arxiv.org/abs/2601.07228},
+  arxiv = {2601.07228},
+  abstract = {We establish a general concentration result for the 1-Wasserstein distance between the empirical measure of a sequence of random variables and its expectation. Unlike standard results that rely on independence or specific mixing conditions, our result requires only two conditions: control over the variance of the empirical moments, and a flexible tail condition we term $\Psi_{r_n}$-sub-Gaussianity. This approach allows for significant dependencies between variables, provided their algebraic moments behave predictably. The proof uses the method of moments combined with a polynomial approximation of Lipschitz functions via Jackson kernels, allowing us to translate moment concentration into topological concentration.}
+}
+
+@article{zhou2026flow,
+  abbr = {Working},
+  title = {Flow Matching Generalizes Through Discretization Bias},
+  author = {Zhixin Zhou and Zhi Zhang and Arash A. Amini},
+  journal = {Working paper},
+  year = {2026},
+  site = {false},
+  abstract = {Flow models exhibit an extraordinary ability to generalize, generating realistic samples far beyond the training data. This phenomenon lacks a simple explanation. We argue that the key mechanism is not the accurate solution of a continuous-time ODE, but rather the error introduced by its discretization. To isolate this effect within the flow matching framework, we introduce the Empirical Velocity Field, a non-parametric estimator of the conditional velocity field derived by replacing the target distribution with its empirical measure. The exact ODE flow driven by the Empirical Velocity Field yields a kernel density estimate that collapses onto the training data. However, its discretization is remarkably powerful. We show that even a single Euler step induces a projection-like effect, concentrating samples on the underlying data manifold and creating diverse, high-quality samples.}
+}
+
 @article{amini2023spectral,
   author = {Arash A. Amini and Zhixin Zhou and Guanhao Feng and Naixin Guo},
   title = {Spectral Group Lasso for Selecting Factors Hidden in Plain Sight},
