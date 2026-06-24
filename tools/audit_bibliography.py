@@ -20,7 +20,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SITE_BIB = ROOT / "data" / "papers.bib"
 DEFAULT_CV_BIB = Path("/Users/arash/Dropbox/latex-docs/cv/mypubs.bib")
 DEFAULT_OLD_SITE_BIB = Path("/Users/arash/Dropbox/Sites/new_site/_bibliography/papers.bib")
-DEFAULT_TEX_ROOTS = [Path("/Users/arash/Dropbox/latex-docs/cv")]
+DEFAULT_TEX_ROOTS = [
+    Path("/Users/arash/Dropbox/latex-docs/cv/cv_aaa.tex"),
+    Path("/Users/arash/Dropbox/latex-docs/cv/merit_pubs_2024.tex"),
+]
 
 ENTRY_RE = re.compile(r"(?im)^[ \t]*@(?P<type>[A-Za-z]+)[ \t]*[{(]")
 FIELD_RE = re.compile(r"(?im)([A-Za-z][A-Za-z0-9_-]*)\s*=")

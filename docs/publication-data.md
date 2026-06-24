@@ -34,7 +34,10 @@ Run:
 Current inputs:
 
 - Site: `data/papers.bib`
-- CV: `/Users/arash/Dropbox/latex-docs/cv/mypubs.bib`
+- CV bibliography: `/Users/arash/Dropbox/latex-docs/cv/mypubs.bib`
+- Current CV TeX files:
+  - `/Users/arash/Dropbox/latex-docs/cv/cv_aaa.tex`
+  - `/Users/arash/Dropbox/latex-docs/cv/merit_pubs_2024.tex`
 - Old site: `/Users/arash/Dropbox/Sites/new_site/_bibliography/papers.bib`
 
 As of the current audit, the old-site bibliography keys match the current site
@@ -42,12 +45,12 @@ keys.  The site has 56 entries; the CV file has 94 parsed entries.  There are
 53 exact key matches, 3 same-arXiv matches with different keys, 20 same-title
 matches with different keys, and 17 CV-only unmatched candidates.
 
-The audit also scans active `\cite`, `\nocite`, and `\fullcite` keys in
-`/Users/arash/Dropbox/latex-docs/cv`.  It finds 66 active citation keys.  Of
-those, 15 are not present in the site bibliography, and 2 old keys are missing
-even from the current CV bibliography.  This means the final merge must either
-preserve old citation keys as hidden aliases or update the TeX files before
-replacing the CV bibliography with a symlink.
+The audit also scans active `\cite`, `\nocite`, and `\fullcite` keys in the two
+current CV TeX files listed above.  It finds 55 active citation keys.  Of those,
+7 are not present in the site bibliography, and none are missing from the
+current CV bibliography.  This means the final merge must either preserve those
+7 current CV citation keys as hidden aliases or update the two current TeX
+files before replacing the CV bibliography with a symlink.
 
 The only detected duplicate key in the CV file is `shen2024bayesian`.
 
@@ -69,9 +72,9 @@ For same-paper duplicate keys, prefer the existing site key:
 - `ZhangAmini2023` over `zhang2020adjusted`
 - `amini2021spectrally` over `st:krr`
 
-However, active CV TeX files currently cite some of the older keys directly.
-Until the TeX files are migrated, keep those old keys in the canonical file with
-`site = {false}` rather than deleting them.
+However, the current CV TeX files cite some alternate keys directly.  Until
+those two TeX files are migrated, keep those alternate keys in the canonical
+file with `site = {false}` rather than deleting them.
 
 CV-only candidates that probably should be added to the canonical file but kept
 hidden from the site with `site = {false}`:
@@ -97,27 +100,16 @@ CV-only candidates that need a human decision before adding to the public site:
 - `ye2022distributed`
 - `zhou2017uncertainty`
 
-Active CV citation keys that are not in the current site bibliography:
+Active citation keys in `cv_aaa.tex` or `merit_pubs_2024.tex` that are not in
+the current site bibliography:
 
 - `10.1093/mnras/stac925`
 - `AlmohriChinnamAmini2023`
 - `JosephsAminiPaezLin2023`
 - `amini2017variable`
 - `glasso:factors`
-- `gmr`
-- `hsbm`
-- `ker:concent`
-- `label:agg`
-- `pl:bip`
-- `raman:arxiv`
-- `raman:ejs`
-- `sdp:sbm:arxiv`
 - `shen2022bayesian`
 - `zhou2023statistical`
-
-Of these, `ker:concent` and `sdp:sbm:arxiv` are active in older CV files but
-are missing even from `/Users/arash/Dropbox/latex-docs/cv/mypubs.bib`; they
-need either replacement in the TeX source or restored hidden alias entries.
 
 After the canonical file is merged and verified, the external CV path can be
 made a symlink to it:
