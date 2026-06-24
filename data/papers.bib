@@ -1,5 +1,31 @@
 
 
+@inproceedings{wu2026laplacian,
+  abbr = {ICLR},
+  title = {Laplacian Kernelized Bandit},
+  author = {Shuang Wu and Arash A. Amini},
+  booktitle = {The Fourteenth International Conference on Learning Representations},
+  year = {2026},
+  url = {https://openreview.net/forum?id=5majEbTAZa},
+  arxiv = {2601.00461},
+  eprint = {2601.00461},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.LG},
+  doi = {10.48550/arXiv.2601.00461},
+  pdf = {https://openreview.net/pdf?id=5majEbTAZa},
+  abstract = {We study multi-user contextual bandits where users are related by a graph and their reward functions exhibit both non-linear behavior and graph homophily. We introduce a principled joint penalty for the collection of user reward functions, combining a graph smoothness term based on RKHS distances with an individual roughness penalty. Our central contribution is proving that this penalty is equivalent to the squared norm within a single, unified multi-user RKHS. We explicitly derive its reproducing kernel, which fuses the graph Laplacian with the base arm kernel. This unification allows us to reframe the problem as learning a single lifted function, enabling the design of principled algorithms, LK-GP-UCB and LK-GP-TS, that leverage Gaussian Process posteriors over this new kernel for exploration. We provide high-probability regret bounds that scale with an effective dimension of the multi-user kernel, replacing dependencies on user count or ambient dimension.}
+}
+
+@inproceedings{zhou2026trajectory,
+  abbr = {ICML},
+  title = {Trajectory Seriation via Spectral Tangent Alignment and Global Embedding},
+  author = {Zhixin Zhou and Navin Souda and Arash A. Amini},
+  booktitle = {Forty-third International Conference on Machine Learning},
+  year = {2026},
+  url = {https://icml.cc/virtual/2026/poster/65481},
+  abstract = {This paper addresses the problem of linear seriation: recovering the intrinsic order of noisy samples drawn from an unknown one-dimensional manifold embedded in a higher-dimensional space. We propose a multi-stage approach that first robustly estimates local tangent directions using Principal Component Analysis on neighborhoods, establishing theoretical consistency for these local estimates. Global orientation consistency of these tangents is then achieved through a spectral relaxation of a pairwise alignment objective. Finally, a globally consistent 1D embedding is computed by solving a carefully formulated linear system that aligns the embedding with the oriented local projections. This method effectively leverages local geometric information while ensuring global coherence, producing an ordering robust to noise, curvature, and initial data rotation.}
+}
+
 @article{faust2026community,
   abbr = {Preprint},
   title = {Community-Size Biases in Statistical Inference of Communities in Temporal Networks},
