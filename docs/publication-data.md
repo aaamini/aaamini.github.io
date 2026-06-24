@@ -37,51 +37,58 @@ Current inputs:
 - CV bibliography: `/Users/arash/Dropbox/latex-docs/cv/mypubs.bib`
 - Current CV TeX files:
   - `/Users/arash/Dropbox/latex-docs/cv/cv_aaa.tex`
-  - `/Users/arash/Dropbox/latex-docs/cv/merit_pubs_2024.tex`
+  - `/Users/arash/Dropbox/latex-docs/cv/merit_pubs_2026.tex`
 - Old site: `/Users/arash/Dropbox/Sites/new_site/_bibliography/papers.bib`
 
-As of the current audit, the old-site bibliography keys match the current site
-keys.  The site has 56 entries; the CV file has 94 parsed entries.  There are
-53 exact key matches, 3 same-arXiv matches with different keys, 20 same-title
-matches with different keys, and 17 CV-only unmatched candidates.
+As of the current audit, the old-site bibliography keys no longer match the
+current site keys because several entries were intentionally normalized during
+the 2026 CV/merit migration.  The site bibliography has 57 parsed entries,
+including one `site = {false}` working-paper entry; the public site displays 56
+papers.  The legacy CV file has 94 parsed entries.  There are 51 exact key
+matches, 4 same-arXiv matches with different keys, 22 same-title matches with
+different keys, and 16 CV-only unmatched candidates.
 
 The audit also scans active `\cite`, `\nocite`, and `\fullcite` keys in the two
-current CV TeX files listed above.  It finds 55 active citation keys.  Of those,
-7 are not present in the site bibliography, and none are missing from the
-current CV bibliography.  This means the final merge must either preserve those
-7 current CV citation keys as hidden aliases or update the two current TeX
-files before replacing the CV bibliography with a symlink.
+current CV TeX files listed above.  The 2024 merit bibliography is frozen and
+continues to use `/Users/arash/Dropbox/latex-docs/cv/mypubs.bib`; the 2026 merit
+bibliography and current CV use `papers-unified.bib`, a symlink to
+`data/papers.bib`.
+
+Active keys in `cv_aaa.tex` and `merit_pubs_2026.tex` all resolve in the
+unified site bibliography.  Six active keys are not present in legacy
+`mypubs.bib`; this is expected because those TeX files now cite the normalized
+canonical keys.
 
 The only detected duplicate key in the CV file is `shen2024bayesian`.
 
 ## Merge Policy
 
-Use the current site entry as the base when the same publication appears in
-both files.  The site entries already carry the public-site metadata (`abbr`,
-`selected`, `pdf`, `code`, `abstract`) and stable HTML anchors.  Copy newer
-standard metadata from the CV entry into the site entry when it is clearly an
-update, but avoid changing the site key unless there is a strong reason.
+Use one canonical entry per paper when current TeX files can be migrated to the
+canonical key.  The 2024 merit bibliography is not migrated.  The site entries
+already carry useful public-site metadata (`abbr`, `selected`, `pdf`, `code`,
+`abstract`), while the CV entries sometimes carry newer DOI/volume/pages data.
+Merge field-by-field; the CV entry is not always better.
 
-For same-paper duplicate keys, prefer the existing site key:
+Normalized keys chosen during the 2026 migration:
 
-- `josephs2023nested` over `JosephsAminiPaezLin2023`
-- `wu2024graph-rlc` over `wu2024graph-arxiv`
-- `akhazhanov2021finding` over `10.1093/mnras/stac925`
-- `label-agg` over `zhou2023statistical`
-- `amini2022perfectness` over `perfect` and `perfect:aistats`
-- `ZhangAmini2023` over `zhang2020adjusted`
-- `amini2021spectrally` over `st:krr`
+- `akhazhanov2022finding` for the MNRAS quasar paper
+- `almohri2023performance` for the Expert Systems with Applications paper
+- `josephs2023nested` for the nested SBM preprint
+- `kazemitabar2017variable` for the NeurIPS decision-tree paper
+- `shen2025bayesian` for the Bayesian Analysis paper
+- `zhou2023statistical` for the ICLR consensus clustering paper
+- `amini2023spectral` for the hidden working paper
 
-However, the current CV TeX files cite some alternate keys directly.  Until
-those two TeX files are migrated, keep those alternate keys in the canonical
-file with `site = {false}` rather than deleting them.
+The MNRAS quasar paper had a corrupted author field in
+`/Users/arash/Dropbox/latex-docs/cv/mypubs.bib` due to an embedded BibTeX entry.
+The canonical entry should use publisher/DOI metadata, plus site fields such as
+`abbr`, `arxiv`, `html`, and `pdf`.
 
 CV-only candidates that probably should be added to the canonical file but kept
 hidden from the site with `site = {false}`:
 
 - `bayes:cov:sbm`
 - `dARCS`
-- `glasso:factors`
 - `hsbm:pkg`
 - `label:agg`
 - `nett`
@@ -100,25 +107,29 @@ CV-only candidates that need a human decision before adding to the public site:
 - `ye2022distributed`
 - `zhou2017uncertainty`
 
-Active citation keys in `cv_aaa.tex` or `merit_pubs_2024.tex` that are not in
-the current site bibliography:
+Former duplicate keys normalized away in current TeX files:
 
-- `10.1093/mnras/stac925`
-- `AlmohriChinnamAmini2023`
-- `JosephsAminiPaezLin2023`
-- `amini2017variable`
-- `glasso:factors`
-- `shen2022bayesian`
-- `zhou2023statistical`
+- `10.1093/mnras/stac925` -> `akhazhanov2022finding`
+- `AlmohriChinnamAmini2023` -> `almohri2023performance`
+- `JosephsAminiPaezLin2023` -> `josephs2023nested`
+- `amini2017variable` -> `kazemitabar2017variable`
+- `glasso:factors` -> `amini2023spectral`
+- `shen2022bayesian` / `shen2024bayesian` -> `shen2025bayesian`
+- `label-agg` -> `zhou2023statistical`
 
-After the canonical file is merged and verified, the external CV path can be
-made a symlink to it:
+The external CV directory uses a separate symlink, leaving the legacy
+`mypubs.bib` file available for comparison:
 
 ```sh
 cd /Users/arash/Dropbox/latex-docs/cv
-mv mypubs.bib mypubs.bib.backup
-ln -s ../../Sites/aaamini.github.io/data/papers.bib mypubs.bib
+ln -s ../../Sites/aaamini.github.io/data/papers.bib papers-unified.bib
 ```
 
-That final symlink step edits files outside this repository and should be done
-only after confirming the merged bibliography still builds the CV.
+Current CV/merit files should use:
+
+```tex
+\addbibresource{papers-unified.bib}
+```
+
+The legacy `mypubs.bib` should not be deleted until the remaining CV-only
+candidates have been reviewed.

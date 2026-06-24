@@ -22,7 +22,7 @@ DEFAULT_CV_BIB = Path("/Users/arash/Dropbox/latex-docs/cv/mypubs.bib")
 DEFAULT_OLD_SITE_BIB = Path("/Users/arash/Dropbox/Sites/new_site/_bibliography/papers.bib")
 DEFAULT_TEX_ROOTS = [
     Path("/Users/arash/Dropbox/latex-docs/cv/cv_aaa.tex"),
-    Path("/Users/arash/Dropbox/latex-docs/cv/merit_pubs_2024.tex"),
+    Path("/Users/arash/Dropbox/latex-docs/cv/merit_pubs_2026.tex"),
 ]
 
 ENTRY_RE = re.compile(r"(?im)^[ \t]*@(?P<type>[A-Za-z]+)[ \t]*[{(]")
