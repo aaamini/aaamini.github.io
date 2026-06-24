@@ -67,6 +67,26 @@
   abstract = {Flow models exhibit an extraordinary ability to generalize, generating realistic samples far beyond the training data. This phenomenon lacks a simple explanation. We argue that the key mechanism is not the accurate solution of a continuous-time ODE, but rather the error introduced by its discretization. To isolate this effect within the flow matching framework, we introduce the Empirical Velocity Field, a non-parametric estimator of the conditional velocity field derived by replacing the target distribution with its empirical measure. The exact ODE flow driven by the Empirical Velocity Field yields a kernel density estimate that collapses onto the training data. However, its discretization is remarkably powerful. We show that even a single Euler step induces a projection-like effect, concentrating samples on the underlying data manifold and creating diverse, high-quality samples.}
 }
 
+@article{zhou2026stage,
+  abbr = {Working},
+  title = {{STAGE}: Spectral Tangent Alignment and Graph-Differential Embedding for Smooth Metric Charting},
+  author = {Zhixin Zhou and Navin Souda and Arash A. Amini},
+  journal = {Working paper},
+  year = {2026},
+  site = {false},
+  abstract = {Many manifold-learning algorithms preserve neighborhoods, diffusion geometry, or approximate geodesic distances, but these objectives do not by themselves produce coordinates whose local Euclidean geometry matches the metric of the data manifold. We study smooth metric charting: recovering a single coordinate chart whose infinitesimal lengths and angles agree with the Riemannian metric induced by the ambient embedding. STAGE estimates local principal component analysis (PCA) tangent frames, fixes their arbitrary gauges by connection-spectral synchronization, projects ambient neighbor displacements into the synchronized tangent coframes, and integrates the resulting vector-valued graph differentials with an inhomogeneous graph-Poisson solve. The connection spectrum is therefore used to align tangent gauges, not as the final embedding. We prove a deterministic coframe-integration theorem showing that, when a single metric chart exists and the synchronized frames are accurate, STAGE recovers sampled chart values up to a global orthogonal gauge and translation. Experiments on synthetic metric-chart controls and controlled image-factor benchmarks show that STAGE improves over classical manifold-learning, tangent-alignment, and connection/transport baselines, with ablations confirming that synchronized differential integration, rather than connection-spectral coordinates alone, is the key charting step.}
+}
+
+@article{fong2026inference,
+  abbr = {Working},
+  title = {Inference-Time Diversity Decomposition for Budgeted Reasoning},
+  author = {Andrew Fong and Zhi Zhang and Arash A. Amini and Ying Nian Wu},
+  journal = {Working paper},
+  year = {2026},
+  site = {false},
+  abstract = {Self-consistency improves reasoning by sampling multiple answers from the same prompt, while self-consistency over paraphrases additionally samples across reformulated versions of the prompt. We study these as different ways of inducing inference-time diversity and explicitly decompose that diversity into solver-level and prompt-level components under a budgeted framework. Our central observation is that the prompt-solver grid is naturally a two-stage cluster sampling design in the sense of survey statistics: prompt rows are primary sampling units, solver samples are secondary sampling units nested in them, and the variance of any aggregation rule is governed by a design effect with two intraclass correlations. We make this view precise with an explicit two-level latent Bernoulli model and use it to predict the performance of two answer selection rules: best-of-N depends mainly on the distribution of correct samples, while majority voting also depends on wrong-answer concentration. We pose two distinct statistical problems and report them separately: predicting held-out aggregation accuracy from estimated diversity components, and selecting an action under a budget. Across seven hosted LLMs on MATH-500 and AIME-2024, the framework ranks the shared 17-action grid with pooled Spearman correlation 0.748 for best-of-N and 0.470 for majority voting; on MATH-500 hard, the correlations are 0.876 and 0.569. For hard-slice action selection, small-grid calibration selects actions in the top half of same-budget candidates at rate 0.825 for best-of-N across four benchmarks, with mean quantile 0.768 versus 0.688 for self-consistency, and 0.758 for majority voting on math benchmarks, with mean quantile 0.687 versus 0.636. The resulting easy/hard router is best read as a cost-saving deployment: on Math it matches self-consistency best-of-N at budget caps 8 and 16 while reducing average solver calls, but it is not yet a uniform accuracy-improving policy. The two-stage sampling lens also points to clean follow-up: a hierarchical Dirichlet-multinomial that preserves both correlations end to end, and a per-stratum bootstrap of cluster vectors.}
+}
+
 @article{amini2023spectral,
   author = {Arash A. Amini and Zhixin Zhou and Guanhao Feng and Naixin Guo},
   title = {Spectral Group Lasso for Selecting Factors Hidden in Plain Sight},
