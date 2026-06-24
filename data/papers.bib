@@ -27,16 +27,22 @@
   selected = {true}
 }
 
-@article{nguen2024network,
-  abbr = {Preprint},
+@inproceedings{nguen2025network,
+  abbr = {NeurIPS},
   title = {Network two-sample test for block models},
   author = {Chung Kyong Nguen and Oscar Hernan Madrid Padilla and Arash A. Amini},
-  year = {2024},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor = {D. Belgrave and C. Zhang and H. Lin and R. Pascanu and P. Koniusz and M. Ghassemi and N. Chen},
+  pages = {166537--166581},
+  publisher = {Curran Associates, Inc.},
+  volume = {38},
+  year = {2025},
   eprint = {2406.06014},
   archivePrefix = {arXiv},
   primaryClass = {math.ST},
   doi = {10.48550/arXiv.2406.06014},
-  url = {https://arxiv.org/abs/2406.06014},
+  url = {https://proceedings.neurips.cc/paper_files/paper/2025/hash/f3766dc99a12e017c50b320fe06c213f-Abstract-Conference.html},
+  pdf = {https://proceedings.neurips.cc/paper_files/paper/2025/file/f3766dc99a12e017c50b320fe06c213f-Paper-Conference.pdf},
   arxiv = {2406.06014},
   abstract = {We consider the two-sample testing problem for networks, where the goal is to determine whether two sets of networks originated from the same stochastic model. Assuming no vertex correspondence and allowing for different numbers of nodes, we address a fundamental network testing problem that goes beyond simple adjacency matrix comparisons. We adopt the stochastic block model (SBM) for network distributions, due to their interpretability and the potential to approximate more general models. The lack of meaningful node labels and vertex correspondence translate to a graph matching challenge when developing a test for SBMs. We introduce an efficient algorithm to match estimated network parameters, allowing us to properly combine and contrast information within and across samples, leading to a powerful test. We show that the matching algorithm, and the overall test are consistent, under mild conditions on the sparsity of the networks and the sample sizes, and derive a chi-squared asymptotic null distribution for the test. Through a mixture of theoretical insights and empirical validations, including experiments with both synthetic and real-world data, this study advances robust statistical inference for complex network data.}
 }
