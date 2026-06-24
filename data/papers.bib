@@ -87,6 +87,43 @@
   abstract = {Self-consistency improves reasoning by sampling multiple answers from the same prompt, while self-consistency over paraphrases additionally samples across reformulated versions of the prompt. We study these as different ways of inducing inference-time diversity and explicitly decompose that diversity into solver-level and prompt-level components under a budgeted framework. Our central observation is that the prompt-solver grid is naturally a two-stage cluster sampling design in the sense of survey statistics: prompt rows are primary sampling units, solver samples are secondary sampling units nested in them, and the variance of any aggregation rule is governed by a design effect with two intraclass correlations. We make this view precise with an explicit two-level latent Bernoulli model and use it to predict the performance of two answer selection rules: best-of-N depends mainly on the distribution of correct samples, while majority voting also depends on wrong-answer concentration. We pose two distinct statistical problems and report them separately: predicting held-out aggregation accuracy from estimated diversity components, and selecting an action under a budget. Across seven hosted LLMs on MATH-500 and AIME-2024, the framework ranks the shared 17-action grid with pooled Spearman correlation 0.748 for best-of-N and 0.470 for majority voting; on MATH-500 hard, the correlations are 0.876 and 0.569. For hard-slice action selection, small-grid calibration selects actions in the top half of same-budget candidates at rate 0.825 for best-of-N across four benchmarks, with mean quantile 0.768 versus 0.688 for self-consistency, and 0.758 for majority voting on math benchmarks, with mean quantile 0.687 versus 0.636. The resulting easy/hard router is best read as a cost-saving deployment: on Math it matches self-consistency best-of-N at budget caps 8 and 16 while reducing average solver calls, but it is not yet a uniform accuracy-improving policy. The two-stage sampling lens also points to clean follow-up: a hierarchical Dirichlet-multinomial that preserves both correlations end to end, and a per-stratum bootstrap of cluster vectors.}
 }
 
+@article{sadeghi2026bridging,
+  abbr = {Working},
+  title = {Bridging Information Gaps: A Conditional Copula Framework for Cross-Market Data Imputation},
+  author = {Hassan Sadeghi and Arash A. Amini},
+  journal = {Working paper},
+  year = {2026},
+  status = {Under revision at Quantitative Finance Letters},
+  site = {false}
+}
+
+@article{nguen2026graphon,
+  abbr = {Working},
+  title = {Graphon Estimation by Convex Weight},
+  author = {Chung Kyong Nguen and Oscar Hernan Madrid Padilla and Arash A. Amini},
+  journal = {Working paper},
+  year = {2026},
+  site = {false}
+}
+
+@article{desousa2026gaussian,
+  abbr = {Working},
+  title = {Gaussian Process Adaptors for Large Language Models},
+  author = {Farhad De Sousa and Jacob Bien and Arash A. Amini},
+  journal = {Working paper},
+  year = {2026},
+  site = {false}
+}
+
+@article{zhang2026two,
+  abbr = {Working},
+  title = {A Two-Sample-Size Theory for Best-of-Infinity Ensembles: Buffered {ERM} and Optional Fast Rates},
+  author = {Zhi Zhang and Arash A. Amini},
+  journal = {Working paper},
+  year = {2026},
+  site = {false}
+}
+
 @article{amini2023spectral,
   author = {Arash A. Amini and Zhixin Zhou and Guanhao Feng and Naixin Guo},
   title = {Spectral Group Lasso for Selecting Factors Hidden in Plain Sight},
