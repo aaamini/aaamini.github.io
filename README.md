@@ -38,8 +38,13 @@ pdf      = {paper.pdf},     % file in assets/pdf/, or a full URL
 code     = {https://github.com/...},
 abstract = {Shown in an expandable fold.},
 selected = {true},          % feature on the homepage
+site     = {false},         % keep in shared BibTeX/CV but hide from site
 supp     = {supp.pdf}, slides = {...}, poster = {...}, website = {...}
 ```
+
+Use `site = {false}` for working papers, software/package records, or other
+CV-only entries that should remain in the central bibliography without appearing
+on `/publications/`.
 
 **Add news.** Add a dated item to `data/news.yml`.
 

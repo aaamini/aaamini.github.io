@@ -130,6 +130,8 @@ BIBTEX_FIELD_ORDER = [
     "primaryclass", "isbn", "issn", "note",
 ]
 
+FALSEY_BIB_VALUES = {"0", "false", "hide", "hidden", "no", "off", "omit"}
+
 
 def delatex_light(s: str) -> str:
     """Quote/dash cleanup that is safe even when `s` contains math."""
@@ -184,6 +186,11 @@ def year_of(e: dict) -> int:
     return int(m.group()) if m else 0
 
 
+def include_on_site(e: dict) -> bool:
+    """Allow one canonical BibTeX file to carry CV-only entries."""
+    return e.get("site", "").strip().lower() not in FALSEY_BIB_VALUES
+
+
 def asset_or_url(value: str) -> str:
     return value if value.startswith("http") else "/assets/pdf/" + quote(value)
 
@@ -233,6 +240,8 @@ def load_bib() -> list[dict]:
     for raw in db.entries:
         e = {k.lower(): re.sub(r"\s+", " ", v.strip())
              for k, v in raw.items() if k not in ("ID", "ENTRYTYPE")}
+        if not include_on_site(e):
+            continue
         arxiv = e.get("arxiv")
         if not arxiv and e.get("eprint"):
             prefix = (e.get("archiveprefix", "") + e.get("eprinttype", "")).lower()
