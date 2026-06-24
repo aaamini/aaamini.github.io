@@ -47,6 +47,21 @@
   abstract = {We consider the two-sample testing problem for networks, where the goal is to determine whether two sets of networks originated from the same stochastic model. Assuming no vertex correspondence and allowing for different numbers of nodes, we address a fundamental network testing problem that goes beyond simple adjacency matrix comparisons. We adopt the stochastic block model (SBM) for network distributions, due to their interpretability and the potential to approximate more general models. The lack of meaningful node labels and vertex correspondence translate to a graph matching challenge when developing a test for SBMs. We introduce an efficient algorithm to match estimated network parameters, allowing us to properly combine and contrast information within and across samples, leading to a powerful test. We show that the matching algorithm, and the overall test are consistent, under mild conditions on the sparsity of the networks and the sample sizes, and derive a chi-squared asymptotic null distribution for the test. Through a mixture of theoretical insights and empirical validations, including experiments with both synthetic and real-world data, this study advances robust statistical inference for complex network data.}
 }
 
+@inproceedings{vinas2025clt,
+  abbr = {NeurIPS},
+  title = {A CLT for Polynomial GNNs on Community-Based Graphs},
+  author = {Vinas, Luciano and Amini, Arash A.},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor = {D. Belgrave and C. Zhang and H. Lin and R. Pascanu and P. Koniusz and M. Ghassemi and N. Chen},
+  pages = {154190--154225},
+  publisher = {Curran Associates, Inc.},
+  volume = {38},
+  year = {2025},
+  url = {https://proceedings.neurips.cc/paper_files/paper/2025/hash/e2ed71839b2e1d34569198cf634ea802-Abstract-Conference.html},
+  pdf = {https://proceedings.neurips.cc/paper_files/paper/2025/file/e2ed71839b2e1d34569198cf634ea802-Paper-Conference.pdf},
+  abstract = {We consider the empirical distribution of the embeddings of a $k$-layer polynomial GNN on a semi-supervised node classification task and prove a central limit theorem for them. Assuming a community based model for the underlying graph, with growing average degree $\nu_n\to\infty$, we show that the empirical distribution of the centered features, when scaled by $\nu_{n}^{k-1/2}$ converge in 1-Wasserstein distance to a centered stable mixture of multivariate normal distributions. In addition, the joint empirical distribution of uncentered features and labels when normalized by $\nu_n^k$ approach that of mixture of multivariate normal distributions, with stable means and covariance matrices vanishing as $\nu_n^{-1}$. We explicitly identify the asymptotic means and covariances, showing that the mixture collapses towards a 1-D version as $k$ is increased. Our results provides a precise and nuanced lens on how oversmoothing presents itself in the large graph limit, in the sparse regime. In particular, we show that training with cross-entropy on these embeddings is asymptotically equivalent to training on these nearly collapsed Gaussian mixtures.}
+}
+
 @article{shen2025bayesian,
   abbr = {BA},
   author = {Luyi Shen and Arash Amini and Nathaniel Josephs and Lizhen Lin},
