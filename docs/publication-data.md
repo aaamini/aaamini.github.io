@@ -64,10 +64,12 @@ The only detected duplicate key in the CV file is `shen2024bayesian`.
 ## Merge Policy
 
 Use one canonical entry per paper when current TeX files can be migrated to the
-canonical key.  The 2024 merit bibliography is not migrated.  The site entries
-already carry useful public-site metadata (`abbr`, `selected`, `pdf`, `code`,
-`abstract`), while the CV entries sometimes carry newer DOI/volume/pages data.
-Merge field-by-field; the CV entry is not always better.
+canonical key.  The 2024 merit bibliography is not migrated.  For entries that
+already appear in the current CV bibliography, preserve the CV-visible BibTeX
+metadata and change only the key.  Website-only fields such as `abbr`, `html`,
+`pdf`, `supp`, `code`, `arxiv`, `abstract`, `selected`, and `site` may be added
+because BibLaTeX ignores them.  Change CV-visible metadata only when there is a
+clear source error, such as the corrupted MNRAS author field.
 
 Normalized keys chosen during the 2026 migration:
 
@@ -81,8 +83,8 @@ Normalized keys chosen during the 2026 migration:
 
 The MNRAS quasar paper had a corrupted author field in
 `/Users/arash/Dropbox/latex-docs/cv/mypubs.bib` due to an embedded BibTeX entry.
-The canonical entry should use publisher/DOI metadata, plus site fields such as
-`abbr`, `arxiv`, `html`, and `pdf`.
+The canonical entry keeps the CV citation metadata but repairs that author list
+and adds site fields such as `abbr`, `arxiv`, `html`, and `pdf`.
 
 CV-only candidates that probably should be added to the canonical file but kept
 hidden from the site with `site = {false}`:
