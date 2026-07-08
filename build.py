@@ -191,6 +191,11 @@ def include_on_site(e: dict) -> bool:
     return e.get("site", "").strip().lower() not in FALSEY_BIB_VALUES
 
 
+def include_yaml_record(record: dict) -> bool:
+    """Allow shared YAML data files to carry records hidden from the website."""
+    return str(record.get("site", "")).strip().lower() not in FALSEY_BIB_VALUES
+
+
 def asset_or_url(value: str) -> str:
     return value if value.startswith("http") else "/assets/pdf/" + quote(value)
 
@@ -413,9 +418,10 @@ def build() -> None:
     build_teaching_tree()
 
     # students
+    visible_students = [s for s in students if include_yaml_record(s)]
     write("/students/", render("students.html", page_title="Students",
-                               current=[s for s in students if not s.get("alum")],
-                               alumni=[s for s in students if s.get("alum")],
+                               current=[s for s in visible_students if not s.get("alum")],
+                               alumni=[s for s in visible_students if s.get("alum")],
                                math=False, active="/students/"))
 
     # standalone pages, at their historical URLs
